@@ -17,7 +17,7 @@ namespace T1TestTask.Extentions
         public static WebApplicationBuilder AddData(this WebApplicationBuilder builder)
         {
             if (builder.Environment.IsDevelopment())
-                builder.Services.AddDbContext<ApplicationContext>(opt => opt.UseInMemoryDatabase("TestDB"));
+               builder.Services.AddDbContext<ApplicationContext>(opt => opt.UseInMemoryDatabase("TestDB"));
             else
                 builder.Services.AddDbContext<ApplicationContext>(opt => opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -30,7 +30,7 @@ namespace T1TestTask.Extentions
             builder.Services.AddControllers().AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-                options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+                options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;            
             });
             return builder;
         }

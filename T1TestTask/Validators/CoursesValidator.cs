@@ -11,7 +11,7 @@ namespace T1TestTask.Validators
         }
     }
 
-    public class UpdateCourseValidator : AbstractValidator<CreateCourseDto>
+    public class UpdateCourseValidator : AbstractValidator<UpdateCourseDto>
     {
         public UpdateCourseValidator()
         {
